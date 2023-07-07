@@ -1,0 +1,11 @@
+package com.edu.array3.test;
+
+public class TwoDimArrayTest {
+	public static void main(String[] args) {
+		int[][] twoArr = new int[2][3];  //2행3열 이중배열 
+		System.out.println(twoArr[0].length);
+		System.out.println(twoArr[1].length);
+		
+	}
+
+}

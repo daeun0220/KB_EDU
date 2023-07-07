@@ -1,0 +1,13 @@
+package com.edu.bank.test;
+
+import com.edu.bank.Customer;
+
+public class BankTest {
+	public static void main(String[] args) {
+		Customer c1 = new Customer(111, "동은");
+		
+		// Customer 와 Account 의 Hasing 이 이뤄짐
+		//c1.setAccount(new Account(789, "국민은행", 10000));
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;NoteBook.java&apos; to &apos;java12_Array_Reference/src&apos;&#x0D;&#x0A;- Original project: &apos;java06_HasARelation&apos;&#x0D;&#x0A;- Destination element: &apos;java12_Array_Reference/src&apos;&#x0D;&#x0A;- Original element: &apos;com.edu.oop.NoteBook.java&apos;" description="Copy compilation unit" destination="=java12_Array_Reference/src" element1="/src&lt;com.edu.oop{NoteBook.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1688626781015" units="1" version="1.0"/>
+</session>

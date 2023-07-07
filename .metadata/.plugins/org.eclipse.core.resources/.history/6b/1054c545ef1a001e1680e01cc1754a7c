@@ -1,0 +1,35 @@
+package com.edu.capsulation;
+/*
+ * 오늘 날짜를 저장하는 클래스 
+ */
+public class MyDate {
+	// private : 같은 클래스에서만 접근을 허용
+	private int month;
+	private int day;
+	
+	//public MyDate() {}
+	
+	
+	public String getDate() {
+		return "Today is " + month + "-" + day;
+	}
+
+	public int getMonth() {
+		return month;
+	}
+
+	public void setMonth(int month) {
+		this.month = month;
+	}
+
+	public int getDay() {
+		return day;
+	}
+
+	public void setDay(int day) {
+		this.day = day;
+	}
+	
+	
+
+}

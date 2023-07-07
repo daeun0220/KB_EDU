@@ -1,0 +1,16 @@
+package com.edu.capsulation;
+/*
+ * 오늘 날짜를 저장하는 클래스 
+ */
+public class MyDate {
+	// private : 같은 클래스에서만 
+	private int month;
+	private int day;
+	
+	//public MyDate() {}
+	
+	public String getDate() {
+		return "Today is " + month + "-" + day;
+	}
+
+}

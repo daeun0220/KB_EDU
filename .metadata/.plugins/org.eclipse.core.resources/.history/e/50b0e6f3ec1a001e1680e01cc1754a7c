@@ -1,0 +1,16 @@
+package com.edu.capsulation.test;
+
+import com.edu.capsulation.MyDate;
+
+public class MyDateTest {
+
+	public static void main(String[] args) {
+		
+		MyDate md = new MyDate(); //calling
+		md.month = 33;
+		md.day = 33;
+		
+
+	}
+
+}
