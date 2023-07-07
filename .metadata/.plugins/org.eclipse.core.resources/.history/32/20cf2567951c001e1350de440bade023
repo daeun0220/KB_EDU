@@ -29,10 +29,10 @@ public class CustomerService {
 		Customer customer = null;
 		for(Customer c : custs) {
 			if(c.getSsn() == ssn) {
-				customer = c;   // return할 경우 if문에 해당 안될때 return 값도 줘야한다
+				return c;
 			}
 		} 
-		return customer;
+		//return customer;
 	}
 	/*
 	 * 메서드 오버라이딩 ::
