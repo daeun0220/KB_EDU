@@ -1,6 +1,5 @@
 package day01.array;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class b_12891 {
@@ -14,32 +13,42 @@ public class b_12891 {
 		int a = sc.nextInt(); int b = sc.nextInt(); int c = sc.nextInt(); int d = sc.nextInt();
 		int[] codes = new int[4];
 		int[] arr = {a, b, c, d};
-		for(int i = 0; i < dna.length(); i++) {
+		int cnt = 0;
+		for(int i = 0; i < p; i++) {  // 처음 부분문자열 잡기..!
 			// " " 는 String ' ' 는 char 
-			if(dna.charAt(i) == 'A') {
-				codes[0] += 1;
-			} else if(dna.charAt(i) == 'C') {
-				codes[1] += 1;
-			} else if(dna.charAt(i) == 'G') {
-				codes[2] += 1;
-			} else if(dna.charAt(i) == 'T') {
-				codes[3] += 1;
-			}
-		}
-		int[] cal = new int[4];
-		for(int i = 0; i < 4; i++) {
-			if(codes[i] < arr[i]) {
-				System.out.println(0);
-				break;
-			} else {
-				if(arr[i] > 0) {
-					codes[i] -= arr[i];
-					cal[i] += arr[i];
-					p -= arr[i];
-				} 
-			}
+			if(dna.charAt(i) == 'A') codes[0]++;
+			if(dna.charAt(i) == 'C') codes[1]++;
+			if(dna.charAt(i) == 'G') codes[2]++;
+			if(dna.charAt(i) == 'T') codes[3]++;
 		}
 		
+		if(checkCounting(codes, arr)) cnt++;
+		// 부분문자열 만들기 
+		int i = -1;
+		for(int j = p; j < s; j++) {
+			i = j - p; 
+			
+			if(dna.charAt(i) == 'A') codes[0]--;
+			if(dna.charAt(i) == 'C') codes[1]--;
+			if(dna.charAt(i) == 'G') codes[2]--;
+			if(dna.charAt(i) == 'T') codes[3]--;
+			
+			if(dna.charAt(j) == 'A') codes[0]++;
+			if(dna.charAt(j) == 'C') codes[1]++;
+			if(dna.charAt(j) == 'G') codes[2]++;
+			if(dna.charAt(j) == 'T') codes[3]++;
+			
+			if(checkCounting(codes, arr)) cnt++;
+		}
+		System.out.println(cnt);
+	}
+	// 2번 이상 사용되는 로직일 경우 함수 만들기 (추천) 
+	public static boolean checkCounting(int[] codes, int[] arr) {
+		for(int i = 0; i < 4; i++) {
+			if(codes[i] < arr[i]) {
+				return false;
+			}
+		} return true;
 	}
 
 }
