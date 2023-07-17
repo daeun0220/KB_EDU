@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// 순열 
+// 순열 -> 백트래킹 
 public class b_15649 {
 	
 	public static int[] arr;
@@ -26,7 +26,7 @@ public class b_15649 {
 	}
 	
 	public static void permutation(int n, int m, int depth) {
-		// 종료조건 확인 
+		// 종료조건. 재귀를 끝낼 조건.
 		if(depth == m) {
 			for( int val : arr) {
 				sb.append(val).append(' ');
@@ -39,7 +39,7 @@ public class b_15649 {
 			if(!visit[i]) {  // 사용하지 않았을 때 
 				visit[i] = true;
 				arr[depth] = i + 1;
-				permutation(n, m, depth +1);
+				permutation(n, m, depth +1); // 재귀 호출
 				visit[i] = false;  // 다시 해제해야한다 
 			}
 		}

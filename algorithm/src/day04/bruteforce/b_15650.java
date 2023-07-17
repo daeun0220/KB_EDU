@@ -3,7 +3,7 @@ package day04.bruteforce;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
+// 조합
 public class b_15650 {
 	
 	public static int[] arr;
