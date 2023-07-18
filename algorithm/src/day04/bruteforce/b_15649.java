@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// 순열 -> 백트래킹 
+// 순열 -> 백트래킹 (순서가 있다)
 public class b_15649 {
 	
 	public static int[] arr;

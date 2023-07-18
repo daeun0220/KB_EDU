@@ -6,38 +6,35 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class b_1920 {
-	
-	public static int[] arr, arr2, ans;
+//ArrayIndexOutOfBounds
+	public static int[] arr, arr2;
 	public static int N, M;
 
 	public static void main(String[] args) throws Exception{
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(bf.readLine());
+		StringTokenizer st;
 		
-		N = Integer.parseInt(st.nextToken());
+		N = Integer.parseInt(bf.readLine());
 		arr = new int[N];
+		
 		st = new StringTokenizer(bf.readLine());
 		for(int i = 0; i < N; i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
-		st = new StringTokenizer(bf.readLine());
 		
-		M = Integer.parseInt(st.nextToken());
-	arr2 = new int[M];
-		st = new StringTokenizer(bf.readLine());
-		for(int i = 0; i < M; i++) {
-			arr2[i] = Integer.parseInt(st.nextToken());
-		}
 		
-		ans = new int[M];
+		M = Integer.parseInt(bf.readLine());
+		arr2 = new int[M];
 		Arrays.sort(arr);
-		
+		st = new StringTokenizer(bf.readLine());
 		for(int i = 0; i < M; i++) {
-			System.out.println(binarySearch2(arr2[i], 0, M-1 ));
+			System.out.println(binarySearch(Integer.parseInt(st.nextToken()), 0, N-1 ));
 		}
+		
+		
 	}
-	
-	static int binarySearch2(int key, int low, int high) {
+	// **** 비교할 배열 주의 *****
+	public static int binarySearch(int key, int low, int high) {
 		int mid;
 		
 		while(low <= high) {
