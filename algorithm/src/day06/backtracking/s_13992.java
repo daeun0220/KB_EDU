@@ -40,12 +40,17 @@ public class s_13992 {
 		if(n == N-1) {
 			int cnt = 0;
 			//int[] route = new int[N-1];
-			for(int i = 0; i < route.length; i++) {
+			for(int i = 0; i <= route.length; i++) {
 				if(i == 0) cnt += arr[0][route[i]];
-				else if(i == route.length-1) cnt += arr[route[i]][0];
-				else cnt += arr[route[i]][route[i+1]];
+				else if(i == route.length) cnt += arr[route[i-1]][0];
+				else cnt += arr[route[i-1]][route[i]];
 			}
 			ans = Math.min(ans, cnt);
+			
+//			for(int i = 0; i < route.length; i++) {
+//				System.out.print(route[i] + " ");
+//				
+//			}
 			return;
 		}
 		for(int i = 1; i < N; i++) {
