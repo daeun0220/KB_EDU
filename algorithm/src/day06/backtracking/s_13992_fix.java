@@ -1,10 +1,10 @@
 package day06.backtracking;
-
+//전자카트
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
-public class s_13992 {
+//배열 없이 sum 더하고 넘기는 방법 / 실수 줄일 수 있다 
+public class s_13992_fix {
 
 	public static int T, N, ans, cnt;
 	public static int[][] arr;
@@ -27,31 +27,26 @@ public class s_13992 {
 				}
 			}
 			
-			route = new int[N-1];
 			ans = 1000;
-			visit = new boolean[N];
-			battery(0,0);
+			visit = new boolean[N+1];
+			battery(0,0,0);
 			System.out.println("#" + tc + " " + ans);
 		}
 
 	}
 	
-	public static void battery(int n, int idx) {
+	public static void battery(int n, int v, int sum) {  // 시작 위치 v 저장 
+		//가지치기 : 맨 위에 작성. 마지막에 시간 남으면 작성. 연습할 때 작성해보기..
+		//if(ans <= sum) return;
+		
 		if(n == N-1) {
-			int cnt = 0;
-			for(int i = 0; i <= route.length; i++) {
-				if(i == 0) cnt += arr[0][route[i]];
-				else if(i == route.length) cnt += arr[route[i-1]][0];
-				else cnt += arr[route[i-1]][route[i]];
-			}
-			ans = Math.min(ans, cnt);
+			ans = Math.min(ans, sum+arr[v][0]);
 			return;
 		}
 		for(int i = 1; i < N; i++) {
 			if(!visit[i]) {
 				visit[i] = true;
-				route[n] = i;
-				battery(n+1, i+1);
+				battery(n+1, i, sum+arr[v][i]);  // 변수잡기 주의..... 잘 생각.....
 				visit[i] = false;
 			}
 		}
@@ -59,5 +54,3 @@ public class s_13992 {
 	}
 
 }
-
-
