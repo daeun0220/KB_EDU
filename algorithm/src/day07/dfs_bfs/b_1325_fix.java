@@ -6,15 +6,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-// 방향성 있는 간선 문제...! 
-//메모리 초과 다시.. --> 인접행렬 때문..
-// 인접 리스트 BFS로 다시...
-public class b_1325 {
+
+public class b_1325_fix {
 
 	public static int N, M, cnt, ans;
 	public static int[] answer;
 	public static boolean[] visit;
-	public static ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
+	public static ArrayList <Integer>[] arr;
+	public static Queue<Integer> q = new LinkedList<>();
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
@@ -23,43 +22,49 @@ public class b_1325 {
 		
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
-		for(int i=0;i<=N;i++){
-            arr.add(new ArrayList<>());
-        }
+		arr = new ArrayList[N+1];
+		for(int i = 0; i < N+1; i++) {
+			arr[i] = new ArrayList<Integer>();
+		}
 		for(int i = 0; i < M; i++) {
 			st = new StringTokenizer(bf.readLine());
 			int x = Integer.parseInt(st.nextToken());
 			int y = Integer.parseInt(st.nextToken());
-			arr.get(x).add(y);
+			arr[x].add(y);
 		}
-		
 		ans = 0;
-		answer = new int[N];
+		answer = new int[N+1];
 		for(int i = 1; i <= N; i++) {
 			visit = new boolean[N+1];
 			cnt = 0;
-			dfs(i);
-			answer[i-1] = cnt;
-			ans = Math.max(ans, cnt);
-
+			bfs(i);
 		}
-		for(int i = 0; i < N; i++) {
-			if(answer[i] == ans)
-			sb.append(i+1 + " ");
+		for(int i = 1; i <= N; i++) {
+			ans = Math.max(ans, answer[i]);
 		}
-		System.out.println(sb.toString());
+		for(int i = 1; i <= N; i++) {
+			if(answer[i] == ans) {
+				sb.append(i + " ");
+			}
+		}
+		System.out.println(sb);
 	}
 	
-	public static void dfs(int v) {
+	public static void bfs(int v) {
+		//Queue<Integer> q = new LinkedList<>(); // 뭔차이.....? 
 		visit[v] = true;
+		q.add(v);
 		
-		for(int i : arr.get(v)) {
-			if(!visit[i]) {
-				cnt++;
-				visit[i] = true;
-				dfs(i);
+		while(!q.isEmpty()) {
+			int x = q.poll();
+			for(int i : arr[x]) {
+				if(!visit[i]) {
+					q.add(i);
+					visit[i] = true;
+					answer[i]++;
+					
+				}
 			}
 		}
 	}
-
 }
