@@ -1,9 +1,9 @@
 package com.edu.bank;
 
 public class Address {
-	private int zipCode; //¿ìÆí¹øÈ£
-	private String region; // µµ
-	private String city; //µµ½ÃÀÌ¸§
+	private int zipCode; //ìš°í¸ë²ˆí˜¸
+	private String region; // ë„
+	private String city; //ë„ì‹œì´ë¦„
 	
 	public Address(int zipCode, String region, String city) {
 		this.zipCode = zipCode;

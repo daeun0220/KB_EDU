@@ -2,7 +2,7 @@ package com.edu.bank;
 
 public class Customer {
 	private String name;
-	private int rrn; //�ֹι�ȣ
+	private int rrn; //주민번호
 	private Account account;
 	private Address address;
 	

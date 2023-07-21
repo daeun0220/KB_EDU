@@ -3,7 +3,7 @@ package day08.etc;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
+// 여행가자
 public class b_1976 {
 	public static int[] p;
 	public static int[] trip;
@@ -24,9 +24,9 @@ public class b_1976 {
 				arr[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		trip = new int[N];
+		trip = new int[M];
 		st = new StringTokenizer(bf.readLine());
-		for(int i = 0; i < N; i++) {
+		for(int i = 0; i < M; i++) {
 			trip[i] = Integer.parseInt(st.nextToken());
 		}
 		p = new int[N+1];
@@ -36,14 +36,12 @@ public class b_1976 {
 				if(arr[i][j] == 1) union(i,j);
 			}
 		}
-		for(int i = 0; i < N-1; i++) {
-			for(int j = i+1; j < N; j++) {
-				if(findSet(trip[i]) != findSet(trip[j])) {
-					System.out.println("NO");
-					return;
-				}
-				
+		for(int i = 0; i < M-1; i++) {
+			if(findSet(trip[i]) != findSet(trip[i+1])) {
+				System.out.println("NO");
+				System.exit(0);
 			}
+				
 		}
 		System.out.println("YES");
 		
@@ -60,5 +58,6 @@ public class b_1976 {
 		// 집합을 합쳐주는 것이므로 주의!!
 		p[findSet(b)] = findSet(a);
 	}
+	
 
 }

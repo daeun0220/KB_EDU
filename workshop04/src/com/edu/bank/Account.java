@@ -30,7 +30,7 @@ public class Account {
 	
 	@Override
 	public String toString() {
-		return "���� �ܾ��� " + balance + "���Դϴ�.";
+		return "현재 잔액은 " + balance + "원입니다.";
 	}
 	
 }

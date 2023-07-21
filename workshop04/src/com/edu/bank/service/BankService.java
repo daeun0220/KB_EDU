@@ -14,7 +14,7 @@ public class BankService {
 	
 	public void addCustomer(String name, int rrn, int zipCode, String region, String city) {
 		if(numberOfCustomers ==  MAX_CUSTOMERS) {
-			System.out.println("���̻� ȸ���� ����� �� �����ϴ�.");
+			System.out.println("더이상 회원을 등록할 수 없습니다..");
 			return;
 		}
 		customers[numberOfCustomers++] =  new Customer(name, rrn, zipCode, region, city);
@@ -32,11 +32,35 @@ public class BankService {
 	
 	public void showAll() {
 		if(numberOfCustomers == 0) {
-			System.out.println("ȸ���� �ƹ��� �����ϴ�.");
+			System.out.println("회원이 아무도 없습니다.");
 			return;
 		}
 		for(int i=0; i<numberOfCustomers; i++) {
 			System.out.println(customers[i]);
 		}
 	}
+	
+	// 고객 삭제 
+	public void deleteCustomer(int rrn) {
+		for(int i=0; i<numberOfCustomers; i++) {
+			if(customers[i].getRrn() == rrn) {
+				customers[i] = null;
+			}
+		}
+	}
+	// 계좌 내 balance로 고객 정렬
+	public void sortCustomerbyAccount(int rrn) {
+		
+	}
+	// 고객 주민등록번호로 고객 정렬
+	public void sortCustomerbyRrn(int rrn) {
+		
+	}
 }
+
+
+
+
+
+
+
