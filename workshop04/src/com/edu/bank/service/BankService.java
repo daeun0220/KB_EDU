@@ -2,7 +2,9 @@ package com.edu.bank.service;
 
 import com.edu.bank.Customer;
 
-public class BankService {
+
+
+public class BankService implements Comparable<Customer>{
 	public static final int MAX_CUSTOMERS = 100;
 	public Customer[] customers;
 	public int numberOfCustomers;
@@ -39,7 +41,6 @@ public class BankService {
 			System.out.println(customers[i]);
 		}
 	}
-	
 	// 고객 삭제 
 	public void deleteCustomer(int rrn) {
 		for(int i=0; i<numberOfCustomers; i++) {
@@ -48,13 +49,14 @@ public class BankService {
 			}
 		}
 	}
-	// 계좌 내 balance로 고객 정렬
-	public void sortCustomerbyAccount(int rrn) {
-		
-	}
-	// 고객 주민등록번호로 고객 정렬
-	public void sortCustomerbyRrn(int rrn) {
-		
+	@Override
+	public int compareTo(Customer cus) {
+		for(int i= 0; i<numberOfCustomers; i++) {
+				if(customers[i].getRrn() < cus.getRrn()) return -1;
+				else if(customers[i].getRrn()> cus.getRrn()) return 1;
+				else return 0;
+		}
+		return 0;
 	}
 }
 

@@ -39,10 +39,10 @@ public class b_1414_fix{
 		}
 		
 		int total = 0;
-		Queue<Node> pq = new PriorityQueue<>();
-		for(int i=0; i<n; i++) {
+		Queue<Node> pq = new PriorityQueue<>();   // 모든 간선 정보를 우선순위 큐에 넣어주어야 한다.
+		for(int i=0; i<n; i++) {                  // 최소 비용 순서대로 연결시키기 위해서
 			for(int j=0; j<n; j++) {
-				if('a' <= map[i][j] && map[i][j] <= 'z') {
+				if('a' <= map[i][j] && map[i][j] <= 'z') {   // a --> 1 계산해준다 
 					total += map[i][j]-96;
 					pq.add(new Node(i+1,j+1, map[i][j]-96));
 				}else if('A' <= map[i][j] && map[i][j] <= 'Z') {
@@ -56,7 +56,7 @@ public class b_1414_fix{
 		int cycleNode = 1;
 		int result = 0;
 		for(int i=0; i<size; i++) {
-			Node node = pq.poll();
+			Node node = pq.poll();    
 			int rx = findSet(node.to);
 			int ry = findSet(node.from);
 			
@@ -66,10 +66,10 @@ public class b_1414_fix{
 				union(node.to, node.from);
 			}
 		}
-		if(cycleNode != n) {
-			System.out.println(-1);
+		if(cycleNode != n) {   // 싸이클 여부도 확인!
+			System.out.println(-1);     // 모든 컴퓨터가 연결되지 않았을 때
 		}else {
-			System.out.println(total-result);	
+			System.out.println(total-result);	// 전체 - 최소 간선 가중치값
 		}
 	}
 	
