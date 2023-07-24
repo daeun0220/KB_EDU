@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="com.edu.domain.NoteBook"/>
     <fullyQualifiedTypeName name="com.edu.domain.test.EmployeeTest"/>
     <fullyQualifiedTypeName name="com.edu.domain.Employee"/>
-    <fullyQualifiedTypeName name="com.edu.util.MyDate"/>
     <fullyQualifiedTypeName name="com.edu.bank.Account"/>
     <fullyQualifiedTypeName name="com.edu.bank.Customer"/>
     <fullyQualifiedTypeName name="com.edu.service.ProductService"/>
@@ -36,4 +35,13 @@
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.edu.util.MyDate"/>
+    <fullyQualifiedTypeName name="com.edu.child.Engineer"/>
+    <fullyQualifiedTypeName name="com.edu.child.Secretary"/>
+    <fullyQualifiedTypeName name="com.edu.parent.Parent"/>
+    <fullyQualifiedTypeName name="com.edu.parent.Employee"/>
+    <fullyQualifiedTypeName name="com.edu.child.Manager"/>
+    <fullyQualifiedTypeName name="com.edu.service.EmployeeService"/>
+    <fullyQualifiedTypeName name="com.edu.service.impl.EmployeeServiceImpl"/>
+    <fullyQualifiedTypeName name="com.self.vo.Employee"/>
 </qualifiedTypeNameHistroy>

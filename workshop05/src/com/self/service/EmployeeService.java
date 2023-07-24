@@ -1,5 +1,6 @@
 package com.self.service;
 
+import com.self.vo.Employee;
 import com.self.vo.Engineer;
 import com.self.vo.Manager;
 
@@ -9,12 +10,14 @@ public class EmployeeService {
 	
 	Engineer[ ] egs;
 	int egidx;	
-
+	
+	
+ 
 	public EmployeeService(int size){
 		ms = new Manager[size];
 		egs = new Engineer[size];
 	}
-	public void addManager(Manager m) {	
+	public void addEmployee(Employee e) {	
 		ms[midx++] = m;
 	}
 	public void addEngineer(Engineer eg) {	
