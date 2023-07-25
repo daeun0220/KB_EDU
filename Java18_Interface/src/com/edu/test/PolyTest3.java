@@ -18,7 +18,8 @@ public class PolyTest3 {
 				new Manager("Janes", new MyDate(1998, 3, 4), 65000.0, "IT")
 		};
 		
-		EmployeeService service = new EmployeeServiceImpl();  // 클래스만 구현 가능 / 인터페이스는 객체 생성 불가능하다
+		//EmployeeService service = new EmployeeServiceImpl();  // 클래스만 구현 가능 / 인터페이스는 객체 생성 불가능하다
+		EmployeeService service = EmployeeServiceImpl.getInstance(); // 싱글톤
 		
 		System.out.println("\n==== 1. 직원 정보를 출력합니다 ====");
 		service.printAllEmployee(emps);
