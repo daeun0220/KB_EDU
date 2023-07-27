@@ -1,6 +1,5 @@
 package com.edu.service;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class BookServiceImpl implements BookService {
 	private static BookServiceImpl mgr = new BookServiceImpl();
 
 	private BookServiceImpl() {
-		System.out.println("»ı¼ºÀÚ È£Ãâ");
+		System.out.println("ìƒì„±ì í˜¸ì¶œ");
 		list = new ArrayList<Book>();
 	
 	}
@@ -26,12 +25,12 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public void add(Book b) {
 		
-		//¸®½ºÆ®¿¡ bookÀ» Ãß°¡
+		//ë¦¬ìŠ¤íŠ¸ì— bookì„ ì¶”ê°€
 	}
 
 	@Override
 	public List<Book> search() {
-		//¸ğµç bookÀ» ¹İÈ¯
+		//ëª¨ë“  bookì„ ë°˜í™˜
 		return null;
 	}
 
@@ -39,9 +38,9 @@ public class BookServiceImpl implements BookService {
 	public void sell(String isbn, int quantity) throws QuantityException, ISBNNotFoundException {
 		
 			/*
-			   1.ÆÈ·Á´Â Ã¥ÀÌ ÀÖÁö¸¸ Àç°í°¡ ºÎÁ·ÇÏ´Ù¸é QuantityException ¿¹¿Ü¸¦ ¹ß»ı
-			   2.ÆÈ·Á´Â Ã¥ÀÌ ÀÖ°í Àç°íµµ ³Ë³ËÇÏ´Ù¸é ±âÁ¸ÀÇ ¼ö·®À» ¾÷µ¥ÀÌÆ®ÇÔ
-			   3.ÆÈ·Á´Â Ã¥ÀÇ isbnÀ» ¹ß°ßÇÏÁö ¸øÇÏ¸é ISBNNotFoundException ¿¹¿Ü¸¦ ¹ß»ı
+			   1.íŒ”ë ¤ëŠ” ì±…ì´ ìˆì§€ë§Œ ì¬ê³ ê°€ ë¶€ì¡±í•˜ë‹¤ë©´ QuantityException ì˜ˆì™¸ë¥¼ ë°œìƒ
+			   2.íŒ”ë ¤ëŠ” ì±…ì´ ìˆê³  ì¬ê³ ë„ ë„‰ë„‰í•˜ë‹¤ë©´ ê¸°ì¡´ì˜ ìˆ˜ëŸ‰ì„ ì—…ë°ì´íŠ¸í•¨
+			   3.íŒ”ë ¤ëŠ” ì±…ì˜ isbnì„ ë°œê²¬í•˜ì§€ ëª»í•˜ë©´ ISBNNotFoundException ì˜ˆì™¸ë¥¼ ë°œìƒ
 			*/
 			
 	}
@@ -49,15 +48,15 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public void buy(String isbn, int quantity) throws ISBNNotFoundException{
 		/*
-		  1. ±¸¸ÅÇÏ·Á´Â isbnÀ» Ã£À»¼ö ¾øÀ¸¸é ISBNNotFoundException ¿¹¿Ü¸¦ ¹ß»ı
-		  2. ±¸¸ÅÇÏ·Á´Â isbnÀÌ ÀÖ´Ù¸é ÃÑ Ã¥ÀÇ ¼ö·®À» ¾÷µ¥ÀÌÆ® ½ÃÅ´
+		  1. êµ¬ë§¤í•˜ë ¤ëŠ” isbnì„ ì°¾ì„ìˆ˜ ì—†ìœ¼ë©´ ISBNNotFoundException ì˜ˆì™¸ë¥¼ ë°œìƒ
+		  2. êµ¬ë§¤í•˜ë ¤ëŠ” isbnì´ ìˆë‹¤ë©´ ì´ ì±…ì˜ ìˆ˜ëŸ‰ì„ ì—…ë°ì´íŠ¸ ì‹œí‚´
 		 
 		 */		
 	}
 
 	@Override
 	public int getTotalAmount() {
-		// µµ¼­°üÀÇ ¸ğµç Ã¥ÀÇ ÃÑ °¡°İ±İ¾×À» ¹İÈ¯
+		// ë„ì„œê´€ì˜ ëª¨ë“  ì±…ì˜ ì´ ê°€ê²©ê¸ˆì•¡ì„ ë°˜í™˜
 		return 0;
 	}
 

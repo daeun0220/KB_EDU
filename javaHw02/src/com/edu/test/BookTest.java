@@ -14,8 +14,8 @@ public class BookTest {
 		
 		
 		service.add(new Book("21424", "Java Pro",15000,5));
-		service.add(new Book("35355","ºĞ¼®¼³°è",30000,3));
-		service.add(new Book("35895","µ¥ÀÌÅ¸ºĞ¼®",42000,7));
+		service.add(new Book("35355","ë¶„ì„ì„¤ê³„",30000,3));
+		service.add(new Book("35895","ë°ì´íƒ€ë¶„ì„",42000,7));
 		service.add(new Magazine("35535", "ChatGPT_AI", 23000,0,2));
 		service.add(new Magazine("66541", "Python",25000,3,3));
 		service.add(new Magazine("77833", "JavaScript",13000,5,4));
@@ -24,13 +24,13 @@ public class BookTest {
 		
 	
 		
-		System.out.println("===========ÀüÃ¼ µµ¼­ Á¤º¸ Ãâ·Â ±â´É===========");
+		System.out.println("===========ì „ì²´ ë„ì„œ ì •ë³´ ì¶œë ¥ ê¸°ëŠ¥===========");
 		ArrayList<Book> books = (ArrayList<Book>)service.search();
 		for(Book book:books) {
 			System.out.println(book);
 		}
 		
-		System.out.println("===========µµ¼­°¡ ÆÇ¸ÅµÇ¾î Àç°í ¼ö·®À» »©´Â ±â´É===========");
+		System.out.println("===========ë„ì„œê°€ íŒë§¤ë˜ì–´ ì¬ê³  ìˆ˜ëŸ‰ì„ ë¹¼ëŠ” ê¸°ëŠ¥===========");
 		try {
 			service.sell("21424", 3);			
 		}catch(QuantityException e) {
@@ -44,7 +44,7 @@ public class BookTest {
 		for(Book book:books) {
 			System.out.println(book);
 		}
-		System.out.println("===========µµ¼­°¡ ±¸¸ÅµÇ¾î Àç°í ¼ö·®À» ´õÇÏ´Â ±â´É===========");
+		System.out.println("===========ë„ì„œê°€ êµ¬ë§¤ë˜ì–´ ì¬ê³  ìˆ˜ëŸ‰ì„ ë”í•˜ëŠ” ê¸°ëŠ¥===========");
 		try {
 			service.buy("21424", 10);			
 		}catch(ISBNNotFoundException e) {
@@ -56,14 +56,14 @@ public class BookTest {
 			System.out.println(book);
 		}
 		
-		System.out.println("===========Àç°í µµ¼­µéÀÇ ¼ö·®*±İ¾×À» ÇÏ¿© ÃÑ Àç°í ±İ¾×À» ¸®ÅÏ===========");
-		System.out.format("ÃÑ Àç°í ±İ¾×Àº :: %d", service.getTotalAmount());
+		System.out.println("===========ì¬ê³  ë„ì„œë“¤ì˜ ìˆ˜ëŸ‰*ê¸ˆì•¡ì„ í•˜ì—¬ ì´ ì¬ê³  ê¸ˆì•¡ì„ ë¦¬í„´===========");
+		System.out.format("ì´ ì¬ê³  ê¸ˆì•¡ì€ :: %d", service.getTotalAmount());
 		
 		
 		
 		System.out.println("**********************************************");
 		BookServiceImpl service2 = BookServiceImpl.getInstance();
-		System.out.println("===========ÀüÃ¼ µµ¼­ Á¤º¸ Ãâ·Â ±â´É===========");
+		System.out.println("===========ì „ì²´ ë„ì„œ ì •ë³´ ì¶œë ¥ ê¸°ëŠ¥===========");
 		ArrayList<Book> books1 = (ArrayList<Book>)service2.search();
 		for(Book book:books1) {
 			System.out.println(book);
